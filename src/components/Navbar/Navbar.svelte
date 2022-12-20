@@ -9,12 +9,12 @@
 <style>
   main {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     padding-left: 10px;
     width: 100%;
     height: 35px;
-    background: #092355;
-    font-size: 14px;
+    background: #232f3e;
+    font-size: 15px;
     letter-spacing: 1px;
     color: white;
     font-weight: 700;
@@ -22,7 +22,8 @@
   }
 
   .nav-links {
-    width: 200px;
+    width: 300px;
+    font-weight: 100;
     display: flex;
     justify-content: space-between;
     align-items: center;

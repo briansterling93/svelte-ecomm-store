@@ -1,7 +1,14 @@
-import type { Product } from "../types"
+import axios from "axios";
+import { topSellingProducts } from "../store";
 
-//fetch 4 random products
-export const getTopSellers = (async () => {
-    const response = await fetch('https://fakestoreapi.com/products?limit=4')
-return await response.json()
-})()
+export const getTopSellers = async () => {
+  try {
+    const response = await axios.get(
+      "https://fakestoreapi.com/products?limit=4"
+    );
+
+    topSellingProducts.set(response.data);
+  } catch (error) {
+    console.log(error);
+  }
+};

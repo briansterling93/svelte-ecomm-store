@@ -1,18 +1,29 @@
-<script>
+<script lang="ts">
+  import { get } from "svelte/store";
   import { getTopSellers } from "../../../../api";
+  import { topSellingProducts } from "../../../../store";
+  import type { Product } from "../../../../types";
+
+  getTopSellers();
+
+  let items: Product[];
+
+  topSellingProducts.subscribe((value) => {
+    items = value;
+  });
 </script>
 
 <main>
   <div class="title">Top Sellers</div>
-
-  {#await getTopSellers}
-    <p>Loading...</p>
-  {:then data}
-    <div>{data.id}</div>
-  {:catch error}
-    <p>Oops, An error occurred!</p>
-    {console.log(error)}
-  {/await}
+  {#each items as item}
+    <div class="top-sellers">
+      <div class="top-seller-item">
+        <img src={item.image} />
+      </div>
+    </div>
+  {:else}
+    <div>No Data</div>
+  {/each}
 </main>
 
 <style>
@@ -25,5 +36,11 @@
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: 5px;
+  }
+
+  .top-sellers {
+    display: flex;
+    flex-direction: row;
+    width: 10%;
   }
 </style>

@@ -1,14 +1,23 @@
-<script>
+<script lang="ts">
   import TopSellers from "./components/TopSellers/TopSellers.svelte";
+
+  let isViewMoreSelected: boolean = false;
 </script>
 
 <main>
-  <div><TopSellers /></div>
+  <div><TopSellers {isViewMoreSelected} /></div>
+  <div class="view-more-button">
+    <!-- {#if topSellingProducts} -->
+    {#if !isViewMoreSelected}
+      <button on:click={() => (isViewMoreSelected = true)}>View More..</button>
+    {/if}
+    <!-- {/if} -->
+  </div>
 </main>
 
 <style>
-  main {
-    display: flex;
-    flex-direction: column;
+  .view-more-button {
+    margin-top: 70px;
+    color: #232f3e;
   }
 </style>

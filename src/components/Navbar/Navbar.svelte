@@ -2,6 +2,7 @@
   <div class="nav-links">
     <div class="link">Home</div>
     <div class="link">Shop</div>
+    <div class="link">Orders</div>
     <div class="link">Cart</div>
   </div>
 </main>
@@ -12,9 +13,9 @@
     justify-content: center;
     padding-left: 10px;
     width: 100%;
-    height: 35px;
+    height: 30px;
     background: #232f3e;
-    font-size: 15px;
+    font-size: 14px;
     letter-spacing: 1px;
     color: white;
     font-weight: 700;

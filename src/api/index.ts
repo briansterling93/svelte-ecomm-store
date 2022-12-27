@@ -4,7 +4,7 @@ import { topSellingProducts } from "../store";
 export const getTopSellers = async () => {
   try {
     const response = await axios.get(
-      "https://fakestoreapi.com/products?limit=4"
+      "https://fakestoreapi.com/products?limit=8"
     );
 
     topSellingProducts.set(response.data);

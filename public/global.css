@@ -5,6 +5,7 @@ body {
 	padding: 0;
 	box-sizing:  none;
 	font-family: "Segoe UI";
+	overflow-x: hidden;
 }
 
 a  {
@@ -15,4 +16,17 @@ a  {
 
 a:hover {
 	text-decoration: underline;
+}
+
+button {
+	background-color: white;
+	padding: 10px;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+	font-weight: 100ß;
+	text-align: center;
+	outline: none;
+	border: none;
+	box-shadow: none;
+	cursor: pointer;
 }

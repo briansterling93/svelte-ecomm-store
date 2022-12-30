@@ -71,7 +71,8 @@
   }
 
   .checked {
-    color: black;
+    /* color: #ffc400; */
+    color: #232f3e;
   }
 
   .unchecked {
@@ -80,5 +81,6 @@
 
   .count-section {
     padding-left: 7px;
+    color: #232f3e;
   }
 </style>

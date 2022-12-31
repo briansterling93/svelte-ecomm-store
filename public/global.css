@@ -5,7 +5,7 @@ body {
 	padding: 0;
 	box-sizing:  none;
 	font-family: "Segoe UI";
-	overflow-x: hidden;
+	overflow: auto;
 }
 
 a  {

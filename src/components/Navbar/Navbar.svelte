@@ -6,7 +6,6 @@
   <main>
     <div class="nav-links">
       <Link to="/">Home</Link>
-      <Link to="/shop">Shop</Link>
       <Link to="/orders">Orders</Link>
       <Link to="/cart">Cart</Link>
     </div>

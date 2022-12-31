@@ -1,25 +1,26 @@
 <script lang="ts">
   import RatingStars from "../../pages/Home/components/RatingStars/RatingStars.svelte";
+  import { isQuickLookModalVisible } from "../../store";
   import type { Product } from "../../types";
   import AddToCartButton from "../AddToCartButton/AddToCartButton.svelte";
   import QuickLook from "../QuickLook/QuickLook.svelte";
   export let item: Product;
 
-  let showQuickLookButton: boolean = false;
-  const test = (shouldShow: boolean) => {
-    showQuickLookButton = shouldShow;
+  let shouldShowQuickLookBtn: boolean = false;
+  const showQuickLookButton = (shouldShow: boolean) => {
+    shouldShowQuickLookBtn = shouldShow;
   };
 </script>
 
 <main>
   <div
-    on:mouseenter={() => test(true)}
-    on:mouseleave={() => test(false)}
+    on:mouseenter={() => showQuickLookButton(true)}
+    on:mouseleave={() => showQuickLookButton(false)}
     class="top-sellers-item"
   >
     <div
       class={`${
-        showQuickLookButton
+        shouldShowQuickLookBtn
           ? "quick-look-section-show"
           : "quick-look-section-hide"
       }`}
@@ -51,7 +52,7 @@
 
   .top-sellers-item:hover {
     background-color: #f6f6f6;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition-delay: 0.1s;
   }
 
@@ -60,15 +61,11 @@
     height: 160px;
   }
 
-  /* .top-sellers-item:hover quick-look-section {
-    display: inline;
-  } */
-
   .quick-look-section-show {
     display: flex;
-    justify-content: flex-start;
-    padding-bottom: 15px;
-    margin-top: -20px;
+    /* justify-content: center; */
+    /* padding-bottom: 15px;
+    margin-top: -20px; */
     /* height: 30px; */
     width: 100%;
   }
